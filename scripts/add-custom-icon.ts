@@ -300,23 +300,24 @@ async function validateSvgContent(
       throw new Error("Not a valid SVG file");
     }
 
-    // Validate viewBox
+    // Validate viewBox - use 24x24 for custom icons instead of 256x256
+    const customViewBox = "0 0 24 24";
     const viewBoxMatch = svgContent.match(/viewBox="([^"]*)"/);
-    if (!viewBoxMatch || viewBoxMatch[1] !== "0 0 256 256") {
+    if (!viewBoxMatch || viewBoxMatch[1] !== customViewBox) {
       console.log(
         chalk.yellow(
-          `⚠ ${iconName}-${weight}: Adjusting viewBox to "0 0 256 256"`
+          `⚠ ${iconName}-${weight}: Adjusting viewBox to "${customViewBox}"`
         )
       );
       if (viewBoxMatch) {
         svgContent = svgContent.replace(
           /viewBox="[^"]*"/,
-          'viewBox="0 0 256 256"'
+          `viewBox="${customViewBox}"`
         );
       } else {
         svgContent = svgContent.replace(
           /<svg([^>]*)>/,
-          '<svg$1 viewBox="0 0 256 256">'
+          `<svg$1 viewBox="${customViewBox}">`
         );
       }
     }
@@ -537,7 +538,7 @@ import weights from "../defs/${pascalName}";
 
 ${doc}
 const I: Icon = React.forwardRef((props, ref) => (
-  <IconBase ref={ref} {...props} weights={weights} />
+  <IconBase ref={ref} {...props} weights={weights} viewBox="0 0 24 24" />
 ));
 
 I.displayName = "${pascalName}Icon";
@@ -555,7 +556,7 @@ import weights from "../defs/${pascalName}";
 
 ${doc}
 const I: Icon = React.forwardRef((props, ref) => (
-  <SSRBase ref={ref} {...props} weights={weights} />
+  <SSRBase ref={ref} {...props} weights={weights} viewBox="0 0 24 24" />
 ));
 
 I.displayName = "${pascalName}Icon";
@@ -582,7 +583,7 @@ export { I as ${pascalName}Icon };
 function generatePreview(svgContent: string): string {
   const preview = svgContent.replace(
     /<svg.*?>/g,
-    `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="#000"><rect width="256" height="256" fill="#FFF" rx="40" ry="40"/>`
+    `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000"><rect width="24" height="24" fill="#FFF" rx="4" ry="4"/>`
   );
   return Buffer.from(preview).toString("base64");
 }

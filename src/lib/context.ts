@@ -6,4 +6,5 @@ export const IconContext = createContext<IconProps>({
   size: "1em",
   weight: "regular",
   mirrored: false,
+  viewBox: "0 0 256 256",
 });

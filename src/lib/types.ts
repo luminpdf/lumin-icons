@@ -16,6 +16,7 @@ export interface IconProps
   size?: string | number;
   weight?: IconWeight;
   mirrored?: boolean;
+  viewBox?: string;
 }
 
 export type Icon = React.ForwardRefExoticComponent<IconProps>;

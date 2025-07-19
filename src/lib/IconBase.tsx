@@ -15,6 +15,7 @@ const IconBase = React.forwardRef<SVGSVGElement, IconBaseProps>(
       size,
       weight,
       mirrored,
+      viewBox,
       children,
       weights,
       ...restProps
@@ -25,6 +26,7 @@ const IconBase = React.forwardRef<SVGSVGElement, IconBaseProps>(
       size: contextSize,
       weight: contextWeight = "regular",
       mirrored: contextMirrored = false,
+      viewBox: contextViewBox = "0 0 256 256",
       ...restContext
     } = React.useContext(IconContext);
 
@@ -35,7 +37,7 @@ const IconBase = React.forwardRef<SVGSVGElement, IconBaseProps>(
         width={size ?? contextSize}
         height={size ?? contextSize}
         fill={color ?? contextColor}
-        viewBox="0 0 256 256"
+        viewBox={viewBox ?? contextViewBox}
         transform={mirrored || contextMirrored ? "scale(-1, 1)" : undefined}
         {...restContext}
         {...restProps}

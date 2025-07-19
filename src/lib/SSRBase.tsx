@@ -13,6 +13,7 @@ const SSRBase = React.forwardRef<SVGSVGElement, IconBaseProps>((props, ref) => {
     size = "1em",
     weight = "regular",
     mirrored = false,
+    viewBox = "0 0 256 256",
     children,
     weights,
     ...restProps
@@ -25,7 +26,7 @@ const SSRBase = React.forwardRef<SVGSVGElement, IconBaseProps>((props, ref) => {
       width={size}
       height={size}
       fill={color}
-      viewBox="0 0 256 256"
+      viewBox={viewBox}
       transform={mirrored ? "scale(-1, 1)" : undefined}
       {...restProps}
     >
