@@ -230,7 +230,7 @@ The following npm scripts are available for development and publishing:
 #### Publishing
 
 - `npm run publish:check` - Run a dry-run to test the publish process
-- `npm run publish` - Interactive publish to npm (runs tests and build automatically)
+- `npm run custom-publish` - Interactive publish to npm (runs tests and build automatically)
 - `npm run publish:dry` - Run dry-run publish to npm
 - `npm run publish:beta` - Publish as beta version
 - `npm run publish:latest` - Publish as latest version
@@ -274,7 +274,7 @@ Before publishing to npm, ensure you have:
 
 5. **Publish**: When ready, publish to npm
    ```bash
-   npm run publish
+   npm run custom-publish
    ```
 
 The publish script automatically:

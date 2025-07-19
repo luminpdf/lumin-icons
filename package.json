@@ -106,7 +106,7 @@
     "release:patch": "npm run version:patch && npm run publish:latest",
     "release:minor": "npm run version:minor && npm run publish:latest",
     "release:major": "npm run version:major && npm run publish:latest",
-    "publish": "tsx scripts/publish.ts",
+    "custom-publish": "tsx scripts/publish.ts",
     "publish:check": "tsx scripts/publish.ts --dry-run"
   },
   "peerDependencies": {
