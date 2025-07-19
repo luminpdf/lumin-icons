@@ -58,7 +58,7 @@ module.exports = {
   experimental: {
     optimizePackageImports: ["@phosphor-icons/react"],
   },
-}
+};
 ```
 
 ### React Server Components and SSR
@@ -91,7 +91,12 @@ Icon components accept all props that you can pass to a normal SVG element, incl
 Phosphor takes advantage of React Context to make applying a default style to all icons simple. Create an `IconContext.Provider` at the root of the app (or anywhere above the icons in the tree) and pass in a configuration object with props to be applied by default to all icons:
 
 ```tsx
-import { IconContext, HorseIcon, HeartIcon, CubeIcon } from "@phosphor-icons/react";
+import {
+  IconContext,
+  HorseIcon,
+  HeartIcon,
+  CubeIcon,
+} from "@phosphor-icons/react";
 
 const App = () => {
   return (
@@ -209,7 +214,97 @@ export default CustomIcon;
 
 If Custom Icons are intended to be used in [React Server Components](#react-server-components-and-ssr), use `<SSRBase />` instead of `<IconBase />` as the render component.
 
+## Development & Publishing
+
+### Scripts
+
+The following npm scripts are available for development and publishing:
+
+#### Development
+
+- `npm run serve` - Start development server with examples
+- `npm run build` - Build the library for production
+- `npm run test` - Run tests
+- `npm run assemble` - Assemble icon components from source assets
+
+#### Publishing
+
+- `npm run publish:check` - Run a dry-run to test the publish process
+- `npm run publish` - Interactive publish to npm (runs tests and build automatically)
+- `npm run publish:dry` - Run dry-run publish to npm
+- `npm run publish:beta` - Publish as beta version
+- `npm run publish:latest` - Publish as latest version
+
+#### Version Management
+
+- `npm run version:patch` - Bump patch version (0.0.x)
+- `npm run version:minor` - Bump minor version (0.x.0)
+- `npm run version:major` - Bump major version (x.0.0)
+- `npm run release:patch` - Bump patch version and publish
+- `npm run release:minor` - Bump minor version and publish
+- `npm run release:major` - Bump major version and publish
+
+### Publishing Workflow
+
+Before publishing to npm, ensure you have:
+
+1. **Authentication**: Log in to npm
+
+   ```bash
+   npm login
+   ```
+
+2. **Tests pass**: All tests should pass
+
+   ```bash
+   npm run test
+   ```
+
+3. **Clean build**: Ensure a fresh build
+
+   ```bash
+   npm run build
+   ```
+
+4. **Dry run**: Test the publish process
+
+   ```bash
+   npm run publish:check
+   ```
+
+5. **Publish**: When ready, publish to npm
+   ```bash
+   npm run publish
+   ```
+
+The publish script automatically:
+
+- Verifies npm authentication
+- Runs tests and builds the package
+- Checks for uncommitted changes
+- Validates the dist folder exists
+- Publishes to npm with proper configuration
+
+### Custom Publish Options
+
+You can also use the publish script directly with options:
+
+```bash
+# Dry run
+tsx scripts/publish.ts --dry-run
+
+# Publish as beta
+tsx scripts/publish.ts --tag beta
+
+# Skip tests (not recommended)
+tsx scripts/publish.ts --skip-tests
+
+# Show help
+tsx scripts/publish.ts --help
+```
+
 <!-- BEGIN_LINKS -->
+
 ## Our Projects
 
 - [@phosphor-icons/homepage](https://github.com/phosphor-icons/homepage) ▲ Phosphor homepage and general info
@@ -266,4 +361,5 @@ If you've made a port of Phosphor and you want to see it here, just open a PR [h
 ## License
 
 MIT © [Phosphor Icons](https://github.com/phosphor-icons)
+
 <!-- END_LINKS -->

@@ -1,6 +1,6 @@
 {
-  "name": "@luminpdf/lumin-icons",
-  "version": "0.0.1",
+  "name": "@lumin-pdf/lumin-icons",
+  "version": "0.1.0",
   "description": "A clean and friendly icon family for React",
   "type": "module",
   "author": {
@@ -11,6 +11,9 @@
   "license": "MIT",
   "repository": "https://github.com/luminpdf/lumin-icons",
   "homepage": "https://luminpdf.com",
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": false,
   "private": false,
   "main": "./dist/index.cjs.js",
@@ -92,7 +95,19 @@
     "add-icon": "tsx scripts/add-custom-icon.ts",
     "add-icon:preview": "tsx scripts/add-custom-icon.ts --dry-run",
     "add-icon:help": "tsx scripts/add-custom-icon.ts --help",
-    "add-icons": "npm run add-icon --"
+    "add-icons": "npm run add-icon --",
+    "prepublishOnly": "npm run test && npm run build",
+    "publish:dry": "npm publish --dry-run",
+    "publish:beta": "npm publish --tag beta",
+    "publish:latest": "npm publish --tag latest",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major",
+    "release:patch": "npm run version:patch && npm run publish:latest",
+    "release:minor": "npm run version:minor && npm run publish:latest",
+    "release:major": "npm run version:major && npm run publish:latest",
+    "publish": "tsx scripts/publish.ts",
+    "publish:check": "tsx scripts/publish.ts --dry-run"
   },
   "peerDependencies": {
     "react": ">= 16.8",
