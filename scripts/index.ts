@@ -2,9 +2,16 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import chalk from "chalk";
-import * as Core from "../core/src/index";
 
-const { IconStyle, icons } = Core;
+// Define types and constants directly to avoid dependency issues
+export enum IconStyle {
+  REGULAR = "regular",
+  THIN = "thin",
+  LIGHT = "light",
+  BOLD = "bold",
+  FILL = "fill",
+  DUOTONE = "duotone",
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,16 +30,12 @@ export const WEIGHTS = [
   IconStyle.DUOTONE,
 ] as const;
 
-export const ALIASES = icons.reduce<Record<string, string>>((acc, curr) => {
-  if ((curr as any).alias) {
-    acc[curr.name] = (curr as any).alias.name;
-  }
-  return acc;
-}, {});
+// Simplified for custom icon addition - no aliases needed
+export const ALIASES: Record<string, string> = {};
 
 export type AssetMap = Record<
   string,
-  Record<Core.IconStyle, { preview: string; jsx: string }>
+  Record<IconStyle, { preview: string; jsx: string }>
 >;
 
 export function readAssetsFromDisk(): AssetMap {
@@ -43,7 +46,7 @@ export function readAssetsFromDisk(): AssetMap {
   assetsFolder.forEach((weight) => {
     if (!fs.lstatSync(path.join(ASSETS_PATH, weight)).isDirectory()) return;
 
-    if (!WEIGHTS.includes(weight as Core.IconStyle)) {
+    if (!WEIGHTS.includes(weight as IconStyle)) {
       console.error(`${chalk.inverse.red(" ERR ")} Bad folder name ${weight}`);
       process.exit(1);
     }
@@ -111,7 +114,7 @@ export function verifyIcons(icons: AssetMap) {
       !(
         weightsPresent.length === 6 &&
         weightsPresent.every(
-          (w) => WEIGHTS.includes(w as Core.IconStyle) && !!icon[w]
+          (w) => WEIGHTS.includes(w as IconStyle) && !!icon[w]
         )
       )
     ) {

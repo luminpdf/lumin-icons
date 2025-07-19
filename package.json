@@ -1,6 +1,6 @@
 {
-  "name": "@phosphor-icons/react",
-  "version": "2.1.10",
+  "name": "@luminpdf/lumin-icons",
+  "version": "0.0.1",
   "description": "A clean and friendly icon family for React",
   "type": "module",
   "author": {
@@ -9,8 +9,8 @@
     "url": "https://tobiasfried.com"
   },
   "license": "MIT",
-  "repository": "phosphor-icons/react",
-  "homepage": "https://phosphoricons.com",
+  "repository": "https://github.com/luminpdf/lumin-icons",
+  "homepage": "https://luminpdf.com",
   "sideEffects": false,
   "private": false,
   "main": "./dist/index.cjs.js",
@@ -88,7 +88,11 @@
     "build": "vite build",
     "test": "vitest",
     "assemble": "tsx scripts/assemble.ts",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\" \"./example/**/*.{js,jsx,ts,tsx,json,vue}\" \"./scripts/**/*.{mjs, js,jsx,ts,tsx,json,vue}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\" \"./example/**/*.{js,jsx,ts,tsx,json,vue}\" \"./scripts/**/*.{mjs, js,jsx,ts,tsx,json,vue}\"",
+    "add-icon": "tsx scripts/add-custom-icon.ts",
+    "add-icon:preview": "tsx scripts/add-custom-icon.ts --dry-run",
+    "add-icon:help": "tsx scripts/add-custom-icon.ts --help",
+    "add-icons": "npm run add-icon --"
   },
   "peerDependencies": {
     "react": ">= 16.8",
