@@ -20,4 +20,4 @@ I.displayName = "TrayArrowDownIcon";
 
 /** @deprecated Use TrayArrowDownIcon */
 export const TrayArrowDown = I;
-export { I as TrayArrowDownIcon, I as ArchiveTrayIcon };
+export { I as TrayArrowDownIcon };

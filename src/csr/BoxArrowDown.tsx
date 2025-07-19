@@ -20,4 +20,4 @@ I.displayName = "BoxArrowDownIcon";
 
 /** @deprecated Use BoxArrowDownIcon */
 export const BoxArrowDown = I;
-export { I as BoxArrowDownIcon, I as ArchiveBoxIcon };
+export { I as BoxArrowDownIcon };

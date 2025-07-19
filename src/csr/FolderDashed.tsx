@@ -20,4 +20,4 @@ I.displayName = "FolderDashedIcon";
 
 /** @deprecated Use FolderDashedIcon */
 export const FolderDashed = I;
-export { I as FolderDashedIcon, I as FolderDottedIcon };
+export { I as FolderDashedIcon };

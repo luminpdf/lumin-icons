@@ -20,4 +20,4 @@ I.displayName = "TextBIcon";
 
 /** @deprecated Use TextBIcon */
 export const TextB = I;
-export { I as TextBIcon, I as TextBolderIcon };
+export { I as TextBIcon };

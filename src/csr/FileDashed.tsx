@@ -20,4 +20,4 @@ I.displayName = "FileDashedIcon";
 
 /** @deprecated Use FileDashedIcon */
 export const FileDashed = I;
-export { I as FileDashedIcon, I as FileDottedIcon };
+export { I as FileDashedIcon };

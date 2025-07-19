@@ -20,4 +20,4 @@ I.displayName = "InfinityIcon";
 
 /** @deprecated Use InfinityIcon */
 export const Infinity = I;
-export { I as InfinityIcon, I as LemniscateIcon };
+export { I as InfinityIcon };

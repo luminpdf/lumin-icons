@@ -20,4 +20,4 @@ I.displayName = "SealQuestionIcon";
 
 /** @deprecated Use SealQuestionIcon */
 export const SealQuestion = I;
-export { I as SealQuestionIcon, I as CircleWavyQuestionIcon };
+export { I as SealQuestionIcon };

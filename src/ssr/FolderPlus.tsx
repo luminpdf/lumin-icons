@@ -20,4 +20,4 @@ I.displayName = "FolderPlusIcon";
 
 /** @deprecated Use FolderPlusIcon */
 export const FolderPlus = I;
-export { I as FolderPlusIcon, I as FolderNotchPlusIcon };
+export { I as FolderPlusIcon };

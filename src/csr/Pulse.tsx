@@ -20,4 +20,4 @@ I.displayName = "PulseIcon";
 
 /** @deprecated Use PulseIcon */
 export const Pulse = I;
-export { I as PulseIcon, I as ActivityIcon };
+export { I as PulseIcon };

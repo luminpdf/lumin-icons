@@ -20,4 +20,4 @@ I.displayName = "FileMagnifyingGlassIcon";
 
 /** @deprecated Use FileMagnifyingGlassIcon */
 export const FileMagnifyingGlass = I;
-export { I as FileMagnifyingGlassIcon, I as FileSearchIcon };
+export { I as FileMagnifyingGlassIcon };

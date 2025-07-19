@@ -20,4 +20,4 @@ I.displayName = "FolderMinusIcon";
 
 /** @deprecated Use FolderMinusIcon */
 export const FolderMinus = I;
-export { I as FolderMinusIcon, I as FolderNotchMinusIcon };
+export { I as FolderMinusIcon };

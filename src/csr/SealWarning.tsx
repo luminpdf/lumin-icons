@@ -20,4 +20,4 @@ I.displayName = "SealWarningIcon";
 
 /** @deprecated Use SealWarningIcon */
 export const SealWarning = I;
-export { I as SealWarningIcon, I as CircleWavyWarningIcon };
+export { I as SealWarningIcon };

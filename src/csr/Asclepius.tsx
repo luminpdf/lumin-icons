@@ -20,4 +20,4 @@ I.displayName = "AsclepiusIcon";
 
 /** @deprecated Use AsclepiusIcon */
 export const Asclepius = I;
-export { I as AsclepiusIcon, I as CaduceusIcon };
+export { I as AsclepiusIcon };

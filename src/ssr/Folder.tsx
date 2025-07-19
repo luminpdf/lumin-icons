@@ -20,4 +20,4 @@ I.displayName = "FolderIcon";
 
 /** @deprecated Use FolderIcon */
 export const Folder = I;
-export { I as FolderIcon, I as FolderNotchIcon };
+export { I as FolderIcon };
