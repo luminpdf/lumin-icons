@@ -1519,7 +1519,6 @@ export * from "./csr/CustomSmile";
 export * from "./csr/ThreeSquaresSplitHorizontal";
 export * from "./csr/FourSquaresSplitHorizontal";
 export * from "./csr/FiveSquaresSplitHorizontal";
-export * from "./csr/PDF";
 export * from "./csr/Unlock";
 export * from "./csr/AgreementGen";
 export * from "./csr/AiSparkle";

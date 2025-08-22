@@ -1516,7 +1516,6 @@ export * from "./YoutubeLogo";
 export * from "./ThreeSquaresSplitHorizontal";
 export * from "./FourSquaresSplitHorizontal";
 export * from "./FiveSquaresSplitHorizontal";
-export * from "./PDF";
 export * from "./Unlock";
 export * from "./AgreementGen";
 export * from "./AiSparkle";
