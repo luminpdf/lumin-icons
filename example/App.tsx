@@ -1,11 +1,11 @@
 import { useState, useCallback } from "react";
 
-import * as Icons from "..";
-import { IconContext } from "..";
-import type { IconWeight, Icon } from "..";
+import * as Icons from "../src";
+import { IconContext } from "../src";
+import type { IconWeight, Icon } from "../src";
 import { icons } from "../core/src/icons";
 import { CustomIcon } from "./CustomIcon";
-import { AtIcon } from "..";
+import { AtIcon } from "../src";
 import "./index.css";
 
 const pascalNames = new Set(icons.map((entry) => entry.pascal_name));
@@ -56,7 +56,7 @@ const App = () => {
           }}
           onClick={onHeartClick}
         >
-          Made with{" "}
+          Made with
           <Icons.Heart
             size={32}
             color={color}
@@ -71,6 +71,7 @@ const App = () => {
         </div>
         <div>
           <CustomIcon size={32} weight="fill" color="darkorange" />
+          <Icons.FilesDashed size={32} />
         </div>
         <div>
           <AtIcon />
