@@ -71,7 +71,7 @@ const App = () => {
         </div>
         <div>
           <CustomIcon size={32} weight="fill" color="darkorange" />
-          <Icons.FilesDashed size={32} />
+          <Icons.FilesDashed size={32} color="blue" />
         </div>
         <div>
           <AtIcon />
