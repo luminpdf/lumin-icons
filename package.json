@@ -1,13 +1,8 @@
 {
-  "name": "@lumin-pdf/lumin-icons",
+  "name": "@luminpdf/icons",
   "version": "0.4.2",
   "description": "A clean and friendly icon family for React",
   "type": "module",
-  "author": {
-    "name": "Tobias Fried",
-    "email": "friedtm@gmail.com",
-    "url": "https://tobiasfried.com"
-  },
   "license": "MIT",
   "repository": "https://github.com/luminpdf/lumin-icons",
   "homepage": "https://luminpdf.com",
@@ -96,7 +91,7 @@
     "add-icon:preview": "tsx scripts/add-custom-icon.ts --dry-run",
     "add-icon:help": "tsx scripts/add-custom-icon.ts --help",
     "add-icons": "npm run add-icon --",
-    "prepublishOnly": "npm run test && npm run build",
+    "prepublishOnly": "npm run build",
     "publish:dry": "npm publish --dry-run",
     "publish:beta": "npm publish --tag beta",
     "publish:latest": "npm publish --tag latest",

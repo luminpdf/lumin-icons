@@ -1,8 +1,8 @@
-# @lumin-pdf/lumin-icons
+# @luminpdf/icons
 
 A comprehensive icon library for React applications, built on top of [Phosphor Icons](https://phosphoricons.com) with enhanced custom icon support and tooling designed specifically for LuminPDF applications.
 
-[![NPM](https://img.shields.io/npm/v/@lumin-pdf/lumin-icons.svg?style=flat-square)](https://www.npmjs.com/package/@lumin-pdf/lumin-icons)
+[![NPM](https://img.shields.io/npm/v/@luminpdf/icons.svg?style=flat-square)](https://www.npmjs.com/package/@luminpdf/icons)
 
 [![GitHub stars](https://img.shields.io/github/stars/luminpdf/lumin-icons?style=flat-square&label=Star)](https://github.com/luminpdf/lumin-icons)
 [![GitHub forks](https://img.shields.io/github/forks/luminpdf/lumin-icons?style=flat-square&label=Fork)](https://github.com/luminpdf/lumin-icons/fork)
@@ -20,7 +20,7 @@ A comprehensive icon library for React applications, built on top of [Phosphor I
 ## Installation
 
 ```bash
-npm i @lumin-pdf/lumin-icons
+npm i @luminpdf/icons
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ npm i @lumin-pdf/lumin-icons
 Simply import the icons you need, and add them anywhere in your render method. The library supports tree-shaking, so your bundle only includes code for the icons you use.
 
 ```tsx
-import { HorseIcon, HeartIcon, CubeIcon } from "@lumin-pdf/lumin-icons";
+import { HorseIcon, HeartIcon, CubeIcon } from "@luminpdf/icons";
 
 const App = () => {
   return (
@@ -51,7 +51,7 @@ import {
   SignIcon,
   ToolsConvertIcon,
   HandHeartIcon,
-} from "@lumin-pdf/lumin-icons";
+} from "@luminpdf/icons";
 
 const PDFApp = () => {
   return (
@@ -67,10 +67,10 @@ const PDFApp = () => {
 
 ### Import Performance Optimization
 
-When importing icons during development directly from the main module `@lumin-pdf/lumin-icons`, some bundlers may eagerly transpile all modules. To avoid this, import individual icons from their specific file paths:
+When importing icons during development directly from the main module `@luminpdf/icons`, some bundlers may eagerly transpile all modules. To avoid this, import individual icons from their specific file paths:
 
 ```tsx
-import { BellSimpleIcon } from "@lumin-pdf/lumin-icons/dist/csr/BellSimple";
+import { BellSimpleIcon } from "@luminpdf/icons/dist/csr/BellSimple";
 ```
 
 #### Next.js Specific Optimizations
@@ -80,7 +80,7 @@ If you're using Next.js 13+, consider using [optimizePackageImports](https://nex
 ```js
 module.exports = {
   experimental: {
-    optimizePackageImports: ["@lumin-pdf/lumin-icons"],
+    optimizePackageImports: ["@luminpdf/icons"],
   },
 };
 ```
@@ -90,7 +90,7 @@ module.exports = {
 When using icons in an SSR environment or React Server Component, import from the `/ssr` submodule:
 
 ```tsx
-import { FishIcon } from "@lumin-pdf/lumin-icons/ssr";
+import { FishIcon } from "@luminpdf/icons/ssr";
 
 const MyServerComponent = () => {
   return <FishIcon weight="duotone" />;
@@ -115,12 +115,7 @@ Icon components accept all props that you can pass to a normal SVG element, incl
 Apply default styles to all icons using React Context:
 
 ```tsx
-import {
-  IconContext,
-  HorseIcon,
-  HeartIcon,
-  CubeIcon,
-} from "@lumin-pdf/lumin-icons";
+import { IconContext, HorseIcon, HeartIcon, CubeIcon } from "@luminpdf/icons";
 
 const App = () => {
   return (
@@ -180,7 +175,7 @@ const RotatingCube = () => {
 You may wish to import all icons at once for use in your project, though depending on your bundler this could prevent tree-shaking and make your app's bundle larger.
 
 ```tsx
-import * as Icon from "@lumin-pdf/lumin-icons";
+import * as Icon from "@luminpdf/icons";
 
 <Icon.SmileyIcon />
 <Icon.FolderIcon weight="thin" />
