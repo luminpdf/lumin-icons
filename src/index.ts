@@ -1629,3 +1629,4 @@ export * from "./csr/TextFocus";
 export * from "./csr/TextTPlus";
 export * from "./csr/TwoSquares";
 export * from "./csr/UserGroup";
+export * from "./csr/ArrowBendSquareIn";

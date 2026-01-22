@@ -1626,3 +1626,4 @@ export * from "./TextFocus";
 export * from "./TextTPlus";
 export * from "./TwoSquares";
 export * from "./UserGroup";
+export * from "./ArrowBendSquareIn";
